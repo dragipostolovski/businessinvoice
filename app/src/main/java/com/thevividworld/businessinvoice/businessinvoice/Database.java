@@ -15,7 +15,7 @@ public class Database extends SQLiteOpenHelper {
 
     private static final String TAG = "Database";
 
-    //database
+    //your database
     private static final String DATABASE_NAME = "invoices.db";
     private static final int DATABASE_VERSION = 1;
 

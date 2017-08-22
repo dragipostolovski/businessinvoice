@@ -38,7 +38,9 @@ public class Invoice extends AppCompatActivity {
 
         database = new Database(this);
 
+        //make the button clickable
         dashboard.setEnabled(true);
+        //when clicked open MainActivity which is the Dashboard
         dashboard.setOnClickListener(
             new View.OnClickListener() {
                 @Override
@@ -50,7 +52,9 @@ public class Invoice extends AppCompatActivity {
                 }
             }
         );
+        //call the function
         AddData();
+        //currently in Invoice activity, disable button to prevent reopening
         addInvoice.setEnabled(false);
         addClient.setEnabled(true);
         addClient.setOnClickListener(
@@ -66,13 +70,16 @@ public class Invoice extends AppCompatActivity {
         );
     }
 
+    //function for adding the data
     public void AddData() {
-        final Cursor data = database.getClient();
+        //class which will be used to call the function from the Database class
+        final Cursor data = database.getClient(); // get the clients
         final ArrayList<String> listData = new ArrayList<>();
         firstName = (AutoCompleteTextView) findViewById(R.id.first_name);
         while(data.moveToNext()){
-            //get the value from the database in column 1
+            //get the value from the database in column 1 and 2
             //then add it to the ArrayList
+            // 0 column is the ID
             listData.add(data.getString(1) + " " + data.getString(2));
         }
         //create the list adapter and set the adapter
@@ -83,6 +90,7 @@ public class Invoice extends AppCompatActivity {
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //get what is currently in the text fields
                     String entryInvoiceNumber = invoiceNumber.getText().toString();
                     String entryFirstName = firstName.getText().toString();
                     if (entryInvoiceNumber.length() != 0
@@ -90,9 +98,11 @@ public class Invoice extends AppCompatActivity {
                         if(entryInvoiceNumber.length() < 6){
                             toastMessage("The invoice number must be 6 digits!");
                         }else {
+                            //insert the data
                             boolean isInserted = database.addData(entryInvoiceNumber, entryFirstName);
                             if(isInserted = true){
                                 toastMessage("Data inserted!");
+                                //empty the fields
                                 invoiceNumber.setText("");
                                 firstName.setText("");
                             } else {
