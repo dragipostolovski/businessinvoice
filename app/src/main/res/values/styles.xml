@@ -1,0 +1,30 @@
+<resources>
+
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:statusBarColor">@color/textColorActionBar</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/CustomActionBarStyle</item>
+    </style>
+
+    <style name="CustomActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/colorOrange</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+
+        <item name="background">@color/colorOrange</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/textColorActionBar</item>
+    </style>
+</resources>
