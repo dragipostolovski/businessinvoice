@@ -39,7 +39,7 @@ public class Client extends AppCompatActivity {
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent dashboard = new Intent(Client.this, MainActivity.class);
+                    Intent dashboard = new Intent(Client.this, Dashboard.class);
                     finish();
                     overridePendingTransition(0, 0);
                     startActivity(dashboard);

@@ -45,7 +45,7 @@ public class Invoice extends AppCompatActivity {
             new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent dashboard = new Intent(Invoice.this, MainActivity.class);
+                    Intent dashboard = new Intent(Invoice.this, Dashboard.class);
                     finish();
                     overridePendingTransition(0, 0);
                     startActivity(dashboard);

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center"
+        android:id="@+id/linearLayout2">
+
+        <Button
+            android:id="@+id/dashboard"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="@string/dashboard"
+            android:background="@drawable/border_button"
+            android:textColor="@color/menuButtonActive"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/add_invoice"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="@string/add_invoice"
+            android:background="@drawable/border_button"
+            android:textColor="@color/menuButtonsTextColor"
+            android:onClick="openInvoice"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/add_client"
+            android:layout_width="0px"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="@string/add_client"
+            android:background="@drawable/border_button"
+            android:textColor="@color/menuButtonsTextColor"
+            android:onClick="openClient"
+            tools:layout_editor_absoluteX="278dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listData"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@+id/linearLayout2"
+        android:layout_alignParentStart="true" />
+    <ListView
+        android:id="@+id/listClient"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/listData" />
+
+</RelativeLayout>
